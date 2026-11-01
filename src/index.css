@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #071316;
+    --bg-secondary: #0a1b1f;
+    --bg-card: #0d262b;
+    --bg-card-hover: #113239;
+    --border-card: #184850;
+    --border-glow: #24d2bd;
+    --teal-glow: #22cfb8;
+    --teal-dark: #071a1d;
+    --teal-muted: #7ca5aa;
+    --teal-bright: #38eed9;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #e2f4f2;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-cyber {
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom glowing effects */
+.glow-teal-sm {
+  box-shadow: 0 0 15px rgba(34, 207, 184, 0.25);
+}
+
+.glow-teal-md {
+  box-shadow: 0 0 25px rgba(34, 207, 184, 0.35);
+}
+
+.glow-teal-lg {
+  box-shadow: 0 0 40px rgba(34, 207, 184, 0.5);
+}
+
+.text-glow {
+  text-shadow: 0 0 12px rgba(34, 207, 184, 0.6);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081719;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b4d54;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #24ceba;
+}
+
+/* Cyber card styling */
+.cyber-card {
+  background: #0d252a;
+  border: 1px solid #1a4850;
+  border-radius: 14px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+  border-color: rgba(36, 210, 189, 0.65);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(34, 207, 184, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Pulse animation */
+@keyframes beacon-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 207, 184, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(34, 207, 184, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 207, 184, 0);
+  }
+}
+
+.beacon-dot {
+  animation: beacon-pulse 2s infinite;
+}
+
+/* Cyber scanline effect for video/media */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
