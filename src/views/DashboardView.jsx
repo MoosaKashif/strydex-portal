@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ChevronRight, ChevronLeft, Shirt, Coffee, Printer, CheckCircle, Sparkles, Trophy, Award, ExternalLink } from 'lucide-react';
-import { playCyberClick, playCyberHover } from '../utils/sound';
+import { playCyberClick } from '../utils/sound';
 
 export default function DashboardView({
   onSelectSession,
@@ -208,7 +208,6 @@ export default function DashboardView({
                 playCyberClick();
                 onSelectSession(s);
               }}
-              onMouseEnter={playCyberHover}
               className="min-w-[280px] sm:min-w-[320px] max-w-[340px] cyber-card p-5 rounded-2xl flex flex-col justify-between cursor-pointer group shrink-0 snap-start relative overflow-hidden"
             >
               {/* Card Glow Border on Hover */}
@@ -263,7 +262,6 @@ export default function DashboardView({
                   playCyberClick();
                   onOpenTask(task);
                 }}
-                onMouseEnter={playCyberHover}
                 className="cyber-card p-4 rounded-xl cursor-pointer group flex flex-col justify-between min-h-[145px] hover:border-[#22cfb8]"
               >
                 <div>
@@ -333,7 +331,6 @@ export default function DashboardView({
                       playCyberClick();
                       onOpenBadge(b);
                     }}
-                    onMouseEnter={playCyberHover}
                     className="relative w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 focus:outline-none"
                     title={`${b.name} - ${b.tier}`}
                   >

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Lock, ChevronRight, ChevronLeft, BookOpen, Sparkles, AlertCircle } from 'lucide-react';
-import { playCyberClick, playCyberHover } from '../utils/sound';
+import { playCyberClick } from '../utils/sound';
 
 export default function ContentLibraryView({ onSelectVideo, searchQuery = '' }) {
   const [lockedModalItem, setLockedModalItem] = useState(null);
@@ -206,7 +206,6 @@ export default function ContentLibraryView({ onSelectVideo, searchQuery = '' }) 
                           playCyberClick();
                           setLockedModalItem(card);
                         }}
-                        onMouseEnter={playCyberHover}
                         className="min-w-[220px] sm:min-w-[245px] max-w-[250px] cyber-card p-4 rounded-xl flex flex-col justify-center items-center text-center cursor-pointer group bg-[#091f24]/90 border border-[#143a41] hover:border-[#22cfb8]/50 shrink-0 relative overflow-hidden"
                       >
                         {card.isPcbSpecial ? (
@@ -254,7 +253,6 @@ export default function ContentLibraryView({ onSelectVideo, searchQuery = '' }) 
                         playCyberClick();
                         onSelectVideo(card);
                       }}
-                      onMouseEnter={playCyberHover}
                       className="min-w-[220px] sm:min-w-[245px] max-w-[250px] cyber-card rounded-xl overflow-hidden cursor-pointer group shrink-0 flex flex-col justify-between hover:border-[#22cfb8]"
                     >
                       {/* Image Thumbnail */}
